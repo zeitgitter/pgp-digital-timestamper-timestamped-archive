@@ -1,0 +1,140 @@
+From: Matthew Richardson <matthew@itconsult.co.uk>
+To: stamper-weekly@stamper.itconsult.co.uk
+Subject: PGP Digital Timestamping Service - Weekly Signature Summary
+Date: Mon, 02 May 2005 15:56:47 +0100
+Organization: I. T. Consultancy Limited, Jersey
+Message-ID: <erfc71hql7tt8lsd9783ghgvrpifj3lg0q@m06.itconsult.net>
+
+-----BEGIN PGP SIGNED MESSAGE-----
+
+########################################################
+#
+# The text of this message was stamped by
+# stamper.itconsult.co.uk with reference 0274494
+# at 02:00 (GMT) on Sunday 01 May 2005
+#
+# For information about the Stamper service see
+#        http://www.itconsult.co.uk/stamper.htm
+#
+########################################################
+
+This is a weekly posting showing daily summary signatures
+made by the PGP timestamping service stamper.itconsult.co.uk
+for the week whose dates are shown below.
+
+Stamper provides both digital timestamping and email proof
+of posting certificates.
+
+The purpose of this posting is to publish these signatures
+in order to add weight to the trustworthiness of the service.
+
+For information about the service (and an explanation of 
+the details within this posting), send an email message to:-
+
+     info@stamper.itconsult.co.uk
+
+or see:-
+
+     http://www.itconsult.co.uk/stamper.htm
+
+Matthew Richardson
+
+- -----BEGIN PGP MESSAGE-----
+Version: 2.6.3i
+Comment: Stamper Id: 0273405   Summary Signature for: 20050424
+
+iQEVAgUAQmwnXIGVnbVwth+BAQEQUgf8COSA5xFKH9urZ01LJSOoIPTjAUpsXSZq
+ecHiGrpkfhjQDRXAfIKJ7O5ICH7V/1B8UtGhv/i+9OD6+PMnsRtBUT6ST31wd/zI
+S2TtTj7hAOvc+0eck8m1UZRfBBv8G3537fK4Vlh9mx4jJOCHJAmRcC57bN+Y8vw6
+oo9w0VQvRSjMEy9oScPZUuinydUpzVLck0b7/nnYckQFNbFsr1LqRKnijyWt6AZx
+nGL3zEhkMnxyutjLtAasguLrURDtVmI4PRx+wpQ/aQQvry94zX5edvAUzshpGhdn
+lLcrC1NeG5QuHPfJOPg81K1TOFCUXrXcbwRGP0T1Bv7vHXtPTbFybg==
+=OFI7
+- -----END PGP MESSAGE-----
+- -----BEGIN PGP MESSAGE-----
+Version: 2.6.3i
+Comment: Stamper Id: 0273636   Summary Signature for: 20050425
+
+iQEVAgUAQm1444GVnbVwth+BAQF5TQf8Dvh67d2Hok2PozZKYfQkYmq8dKMjMTGT
+3wz4oy1rOtII5Vn5qTd/vF8YPXVhlsRLUlEX5+DoRihb6LbTrwj19nFMHDaQks1L
+UDF7bNUtZkCOSevspUNE/HFXglZ5vXLZMtd88qL4hfhGpgLQScy9mvgGp5gOoIeY
+KD5tmvqBXhHWvk1DgD7YLXT8ElUJ81vKtaD78hKBLo5kPcOeIntX3SuX/3Bz/cYa
+5m0ibjdHtLcE2S++jN5XEMeX3CDKrfcYacXnOcSd9nIgW6lhvTrOzWa0YCjPxGMJ
+sk2ch7MKk0wlyppdB4QjSZ0xLn3z0NCVEIr7YQS0kTLqRLvLnQavIA==
+=j6ub
+- -----END PGP MESSAGE-----
+- -----BEGIN PGP MESSAGE-----
+Version: 2.6.3i
+Comment: Stamper Id: 0273813   Summary Signature for: 20050426
+
+iQEVAgUAQm7KXoGVnbVwth+BAQEeSgf9EE8g+w2cKl/e52EDyAXLl/KJqEYr5oIO
+CUlYi1LE0VyLLolI7T4du7wPkk0l2XrX0biK2Pv7Eut6tLEMLgf6sg5Am1ZzRX9R
+p8d2JLdNTyhdpDLUDs+CsMnckZelMu+DZCPW4lz3NQqrxqBwo8HE6izGN8RSKdC0
+kx996Q/WDSgbKvEU13tGegaWtR3RsbP2KAvUDqae5ySh7NYMRTpemFzuyQpFg6bD
+2llmBDTNjLGSrO9NiCdrIQha9Oti7AQdWQwADxG0RdJC1XKEBYz/bv7Xn5onAqMt
+ZObg9+jhz6kUVUX8lFCaWmKAsm40JMDE08m2ITtvEJC2phNKW/63+w==
+=mz7J
+- -----END PGP MESSAGE-----
+- -----BEGIN PGP MESSAGE-----
+Version: 2.6.3i
+Comment: Stamper Id: 0273981   Summary Signature for: 20050427
+
+iQEVAgUAQnAb4YGVnbVwth+BAQFt9Af9Hm4oKuWCRfwteE8Od1zC9Mtu3WjtDVVL
+MdTdByC12pMNOPH39AMr3Ag8wJs3wS9i7NYzOpz3f4024CSgsQMDpa6jNC/+tiPt
+tc6148ckeo2SsT0vIjDcwdDPXhWytehA5U84TCTq9dU6Y/wN6kOSnh09G+kco65v
+wmaTkrVKOeCxSpbqF2dJUTc82+TZIQhM8VHsNMmSc0EFLMCYlUjVGmGlU34ylMHx
+r+a0mQEIPsi7XsaHCIKc05aIvLHGwEp5McKZgadfqNemIiHaZvxWFSMLaCyuCG2M
++eh8t+VsG+VGhv90Nntif7pCTjGVwzOCcPCL+r6nkFckM/C4El1JWg==
+=xa2H
+- -----END PGP MESSAGE-----
+- -----BEGIN PGP MESSAGE-----
+Version: 2.6.3i
+Comment: Stamper Id: 0274160   Summary Signature for: 20050428
+
+iQEVAgUAQnFtVoGVnbVwth+BAQF+Jgf8DLpZtr3pRWvx4HQ2q0YsX1/vKBWEh8pt
+D1Ln837k1oZa+lPUR5xj2ERpLOZB+tpIC4yTHh6DU12//VBjxE/AOiHExcOEyPCw
+fcsB8bnsjPwleehcoYsqtgOyVPKQZXUdBk+BymqodPUQCmKTP+18D5gvKrfQn01I
+p5Ra64PuhPhuKMEgO8vtV0JP5WrDreJtEbak0ks2mgJbvUyf/7SsjHl163egOP8k
+vuRRbKKYfk6nU9CmKNQDphLlzHOeP79rFbvXGj/mO+0merUN/Hl3GEHb45jm8TAa
+7i5Emzy9PCQ/9L+h4ShoQl0/177vJusUSrqSn5wCiwk3SxG6326V5w==
+=UXOT
+- -----END PGP MESSAGE-----
+- -----BEGIN PGP MESSAGE-----
+Version: 2.6.3i
+Comment: Stamper Id: 0274329   Summary Signature for: 20050429
+
+iQEVAgUAQnK+1oGVnbVwth+BAQFL8Qf7B7c7Lya3YcyrdKM4EFN9PgmIY/26sR++
+Fn5+NXPY858Qf61Q2H34qGmqLIVeuo6hF0bXAbK0vzSFATQoB3yzbcEGChY+KxNy
+CIEWXrRsbPNCf2m7UMOS7FqGWtO5cepYeOhGxkNQ1W/fXTft/i/Jd3uhyL9yAMlW
+HgG2Cw3zi+oUKZo5stsuBCPnFOv1cK3pevEHPk/27efEe/d5gy8SfPpRu2Nfulkw
+hnm1hsZAcXDh94KWz7bO665kxUa/BatnmEZMmj7YhpuEfX5FnJT1pRuf+7WMSAQM
+a0DZjWb2cwRV/76piYwe4/jJu05BJT4sENdghcaEcEicchOR9Pt7vg==
+=tFhF
+- -----END PGP MESSAGE-----
+- -----BEGIN PGP MESSAGE-----
+Version: 2.6.3i
+Comment: Stamper Id: 0274478   Summary Signature for: 20050430
+
+iQEVAgUAQnQQXIGVnbVwth+BAQEKWwf9HXr59oulAp7U0AMtvx8hmbANRPualNM7
+87kFNtRA/2GO8nf7zuNT0otihrRjOQF2d+vP57v5mojZfd/ZPJl5Lft8jCx3xhtb
+e+S2RTFdnHONvBDaUy8/74ARcVFgwmG6XuREjdW9UiR/3SCIcUnyjaItqMH0AMu5
+wcpuDR4n1daM3F94W79iKveafDJM7/MU/Bzt1e/KoJpJAiQG74zXoxVpqSn1o8wC
+jLtbEf9bjgaxkzHHeKm8/IbgF8tH5XyY6dJRVLLLgRfexmmHyHW/27NIUBwCJUc8
+CBsVjw+hELpivfBPH7htY22UqXBw09IjAjFRZKx+IzcsFOR8FDcCiA==
+=Pmqi
+- -----END PGP MESSAGE-----
+
+
+-----BEGIN PGP SIGNATURE-----
+Version: 2.6.3i
+Charset: noconv
+Comment: Stamper Reference Id: 0274494
+
+iQEVAgUBQnQ4KoGVnbVwth+BAQHzzwf+I1YWXI1AzOBk0qh/4VEYvtdWWMAXDhVU
+kPCohTXXqZieqT41QrLOxJe6B/5RzDHD5M4Vg8RfGzC8JdgPNphkwTuZSaLW6rDt
+nAXlBkFXCjel9ZcOUAt0rFhV662Q1lQlypieyw2rbsaUcAKpv3C5XwJDYNouD15t
+ByWAced0mn3o72iWFfXRIIdmU8Xa0JBb484lysDFsYZ/Py9fajTVGYQmnUaSRnMO
+CGjiU/yxL3yTeN6Adye2GMc8CdOaBKnSpNjY39/lzwmQRxY/r2vmwEm3h9T5N2SI
+hYiAn0wKZTGT/IddF/csjgb/8P1vA38a3Zeice6JpIZu7YmG8r5L4A==
+=Uam7
+-----END PGP SIGNATURE-----

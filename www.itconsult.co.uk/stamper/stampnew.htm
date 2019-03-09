@@ -1,0 +1,112 @@
+<HTML><HEAD>
+<TITLE>Stamper:  What's New
+</TITLE>
+</HEAD>
+<BODY>
+<H1>Stamper:  What's New</H1>
+
+<P Align="Center"><HR Size=2 Width=100%></P>
+<H3>25-May-14: Self-Signed Keys</H3>
+<P>A number of enquiries have been made regarding the fact that Stamper's PGP
+keys have not been self-signed.  The reason (back in 1995) was to ensure that
+Stamper did not sign anything other than messages via the service.  Back then,
+there was no requirement to self-sign keys.</P>
+<P>More recent software such as GnuPG strongly recommend self-signing, and operate
+with difficulty when presented with non-self-signed keys.</P>
+<P>With this in mind, Stamper's PGP key has today been self-signed and the
+<A HREF="stampinf.htm">documentation</A>
+updated.</P>
+
+<P Align="Center"><HR Size=2 Width=100%></P>
+<H3>12-Oct-10: Service Running for 15 Years</H3>
+<P>It was 15 years ago today, on 12 October 1995, that Stamper
+made its first timestamp!</P>
+<P Align="Center"><HR Size=2 Width=100%></P>
+<H3>04-Jun-02: Weekly Summary Usenet Group Change</H3>
+<P>As there have been issues with the moderation of messages to comp.security.pgp.announce the weekly summaries will henceforth only be posted to alt.security.pgp.  The definitive full copies of all daily and weekly postings continue to be available <A HREF="http://stamper.itconsult.co.uk/stamper-files/">here</A>.</P>
+<P>Notwithstanding the lack of any new items here in recent times, Stamper has remained in continuous operation!</P>
+<P Align="Center"><HR Size=2 Width=100%></P>
+<H3>21-Jul-97: Message size limited to 1Mb</H3>
+<P>I have had to limit the size of messages allowed to pass through Stamper.  I have set the limit to approximately 1Mb, which I hope is more than sufficient for everyone.  If anyone has a genuine requirement to increase this, please <A HREF="mailto:support@stamper.itconsult.co.uk">let me know</A>.</P>
+<P Align="Center"><HR Size=2 Width=100%></P>
+<H3>29-Apr-97: Major Changes including Proof of Posting Certificates</H3>
+<P>Stamper has now moved to its own domain <em>stamper.itconsult.co.uk</em> with new email addresses for the various services.  The old addresses will continue to work automatically for the time being.  In the future they may return messages advising of the change of addresses.</P>
+<P>Also Stamper now incorporates email <A HREF="post.htm">Proof of Posting Certificates</A> which confirm that an email was requested to be sent to certain addresses at a given time.  Please note that this does <strong>not</strong> authenticate the sender in any way.</P>
+<P>The new email addresses are:-</P>
+<UL>
+<LI><A HREF="mailto:post@stamper.itconsult.co.uk">post@stamper.itconsult.co.uk</A></LI>
+<LI><A HREF="mailto:clear@stamper.itconsult.co.uk">clear@stamper.itconsult.co.uk</A></LI>
+<LI><A HREF="mailto:header@stamper.itconsult.co.uk">header@stamper.itconsult.co.uk</A></LI>
+<LI><A HREF="mailto:text@stamper.itconsult.co.uk">text@stamper.itconsult.co.uk</A></LI>
+<LI><A HREF="mailto:pgp@stamper.itconsult.co.uk">pgp@stamper.itconsult.co.uk</A></LI>
+<LI><A HREF="mailto:binary@stamper.itconsult.co.uk">binary@stamper.itconsult.co.uk</A></LI>
+</UL>
+<P>Although still supported, the mechanism for specifying the "mode" of operation within the subject is no longer documented.  Its continued use is not recommended.</P>
+<P>The address for support is now <A HREF="mailto:support@stamper.itconsult.co.uk">support@stamper.itconsult.co.uk</A> and (surprisingly enough) the list server is now at <A HREF="mailto:list@stamper.itconsult.co.uk">list@stamper.itconsult.co.uk</A>.</P>
+<P>The <A HREF="stampinf.htm">documentation</A> has been extensively rewritten to reflect all these changes.</P>
+<P Align="Center"><HR Size=2 Width=100%></P>
+<H3>31-Jul-96: Change of Usenet Group for Weekly Signature Postings</H3>
+<P>With the creation of the "comp.security.pgp" hierarchy within Usenet, it now seems more appropriate to post Stamper's weekly signature summaries to comp.security.pgp.announce instead of alt.security.pgp.</P>
+<P>Postings have been being made to both groups for a couple of weeks.</P>
+<P>However this weekend's posting will be the last to alt.security.pgp.  Thereafter postings will only be made to comp.security.pgp.announce.</P>
+<P>As usual anyone wishing to receive the weekly postings via email can join the list "stamper-weekly".</P>
+<P Align="Center"><HR Size=2 Width=100%></P>
+<H3>23-Jul-96: Fixed problem with received headers</H3>
+<P>I recently observed a problem whereby mail addressed to (say) stamp-clr@itconsult.co.uk ended up being stamped in text mode in error.</P>
+<P>The problem turned out to be that Stamper was relying on the headers of the inbound message to read the destination address.  If the message was sent "Bcc" to (say) stamp-clr, the address was not being recognised as "stamp-clr" did not appear in the headers.</P>
+<P>I have made amendments to ensure that the destination address is always read from the SMTP envelope of the message and not the headers, which seems to have overcome this particular problem.</P>
+<P Align="Center"><HR Size=2 Width=100%></P>
+<H3>31-May-96: PGP Software Updates</H3>
+<P>All the PGP source code and some of the binaries now include <I>patch level 'a'</I>.  The remaining binaries will be updated as soon as new patched versions become available.</P>
+<P Align="Center"><HR Size=2 Width=100%></P>
+<H3>26-Apr-96:  Faster turnaround of documents for stamping</H3>
+<P>The turnaround time of Stamper should now be within about 15 minutes, assuming no connection problems.  Previously it could have been up to two hours (or longer if there were connection problems).  The list server and responders should also reply within about 15 minutes.  This is as a result of Stamper being on a permanent Internet connection.</P>
+<P>In addition the daily files generated by Stamper are now being automatically uploaded to the web pages by about 04:00 the day following the date they refer to.</P>
+<P Align="Center"><HR Size=2 Width=100%></P>
+<H3>08-Apr-96:  Daily summaries now available automatically</H3>
+<P>Whilst working on automating the weekly summary postings, I have been able to provide the facility for anyone who wants to to receive daily postings from Stamper of all signatures made the previous day.  These postings are the same as the daily files available from stamper-files or from http://stamper.itconsult.co.uk/stamper-files/.</P>
+<P>I am not sure that many people will want this facility but, as I am using it internally as part of the automation, I thought I would make it public.</P>
+<P>To receive these messages join the list "stamper-daily" in the normal way.  This is by sending a message to list@itconsult.co.uk with the line "join stamper-daily" (without the quotes) in the BODY of the message.</P>
+<P Align="Center"><HR Size=2 Width=100%></P>
+<H3>02-Mar-96:  Header Mode &amp; Addresses to Select Mode</H3>
+<P>Two new features have now been added to Stamper: "header" mode which clearsigns both the headers and the body of a received message and alternative email addresses in order to specify Stamper's mode of operation without having to use the "Subject:" field.</P>
+<P>"Header" mode is selected either by putting the word "header" (without the quotes) in the subject line or by sending the messsage to <A HREF="mailto:stamp-hdr@itconsult.co.uk">stamp-hdr@itconsult.co.uk</A>.</P>
+<P>The other modes can be specified by sending to the following addresses:-</P>
+<UL>
+<LI><A HREF="mailto:stamp-txt@itconsult.co.uk">stamp-txt@itconsult.co.uk</A> - for text mode</LI>
+<LI><A HREF="mailto:stamp-clr@itconsult.co.uk">stamp-clr@itconsult.co.uk</A> - for clear mode</LI>
+<LI><A HREF="mailto:stamp-pgp@itconsult.co.uk">stamp-pgp@itconsult.co.uk</A> - for pgp mode</LI>
+<LI><A HREF="mailto:stamp-bin@itconsult.co.uk">stamp-bin@itconsult.co.uk</A> - for binary mode</LI>
+</UL>
+<P Align="Center"><HR Size=2 Width=100%></P>
+<H3>27-Jan-96:  Clearsigned Mode Now Available</H3>
+<P>At the suggestion of one of the users, I have added a "clear" mode.  In this mode, Stamper will clearsign the body of any message that it is sent.  Normally it would have fully armoured the reply.  This mode is invoked by putting the word "clear" (without the quotes) in the subject of the message to Stamper.</P>
+<P><HR ALIGN=left Size=2 Width=100%></P>
+<H3>24-Jan-96:  Files available from WWW</H3>
+<P>I have now loaded all the signature and summary files onto my WWW server.</P>
+<P>The page address is:-</P>
+<PRE>
+     <A HREF="http://stamper.itconsult.co.uk/stamper-files/">http://stamper.itconsult.co.uk/stamper-files/</A>
+</PRE>
+<P>Please note that they are currently being manually updated and may therefore be a couple of days behind what is available from the list server.</P>
+<P><HR ALIGN=left Size=2 Width=100%></P>
+<H3>21-Jan-96:  Web Page Changes &amp; Enhancements</H3>
+<P>The web address for the Stamper pages has now changed to:-</P>
+<PRE>
+     http://www.itconsult.co.uk/stamper.htm
+</PRE>
+<P>The previous address will continue to work for the time being, but is not guaranteed in the longer term.</P>
+<P>I have put the latest international release of PGP 2.6.3i on those web pages so that they can be downloaded directly.</P>
+<P>There is also a new link for <A HREF="http://stamper.itconsult.co.uk/stamper-files/">Signature & Summary Files</A>.  Within the next few days, those files available from the list server will also be available via WWW.  These will include all the signatures made by Stamper as well as the weekly summaries.</P>
+<P><HR ALIGN=left Size=2 Width=100%></P>
+<H3>28-Nov-95:  Intermittent Failure to Stamp</H3>
+<P>I have noticed a very intermittent problem which will cause Stamper to occasionally fail to stamp a message.</P>
+<P>The symptoms are that "pgp" or "binary" messages will be rejected claiming that the ASCII armour could not be removed, and that "text" messages will simply receive the terms &amp; conditions header without any stamp.</P>
+<P>In either case, simply resubmitting the message should get it properly stamped.</P>
+<P>This only seems to be happening to a very small number of messages andI shall try to track the problem down as soon as possible.  I will post a further announcement when I have found &amp; fixed it.</P>
+<P Align="Center"><HR Size=2 Width=100%></P>
+<P>Matthew Richardson<br>
+<A HREF="/index.htm">I. T. Consultancy Limited</A>, Jersey, Channel Islands<br>
+Last updated: 25 May 2014
+</P>
+</BODY></HTML>

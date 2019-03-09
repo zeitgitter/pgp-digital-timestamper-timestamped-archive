@@ -1,0 +1,4 @@
+*	text=auto
+*.txt	filter=msdos
+*.htm	filter=msdos
+*.html	filter=msdos

@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /stamper-files/
+Disallow: /pgpsw/
+Disallow: /icons/
+Disallow: /temp/
+Disallow: /status/

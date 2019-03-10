@@ -1,25 +1,25 @@
 # --reject-regex ';' prevents Apache directory-listings to be downloaded
 #   multiple times in different sort orders
-WGET	= wget --recursive --no-clobber --reject-regex ';'
+WGET	= wget --recursive --no-verbose --no-clobber --reject-regex ';'
+SDIR	= stamper.itconsult.co.uk/stamper-files
+SURL	= http://${SDIR}/
 
 all:
 	@echo "Please use 'make get-all' or 'make get-new-sigs'"
 
 get-all:
-	${WGET} http://www.itconsult.co.uk/index.htm
-	${WGET} http://stamper.itconsult.co.uk/stamper-files/
+	${WGET} http://www.itconsult.co.uk/index.htm ${SURL}
 
 get-new-sigs:
 # Assume that only the indexes need updating, everything else will persist.
-	${RM} stamper.itconsult.co.uk/index.html
-	${RM} stamper.itconsult.co.uk/*/index.html
+	${RM} ${SDIR}/index.html ${SDIR}/*/index.html
 # Make sure that on January 1st, the previous year's sig*.txt is retrieved
 # again.
-	${RM} stamper.itconsult.co.uk/sig`date --date=yesterday +%Y`.txt
-	${WGET} http://stamper.itconsult.co.uk/stamper-files/
+	${RM} ${SDIR}/sig`date --date=yesterday +%Y`.txt
+	${WGET} ${SURL}
 
 cron:	get-new-sigs
-	git add stamper.itconsult.co.uk/stamper-files/**
+	git add ${SDIR}/**
 	git commit -m "Updated files on `date +%Y-%m-%d`"
-	git timestamp --branch gitta-timestamps --server https://gitta.enotar.ch
+#	git timestamp --branch gitta-timestamps --server https://gitta.enotar.ch
 	git push

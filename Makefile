@@ -11,10 +11,11 @@ get-all:
 	${WGET} http://www.itconsult.co.uk/index.htm ${SURL}
 
 get-new-sigs:
-# Assume that only the indexes need updating, everything else will persist.
+# Assume that only the indexes need updating, everything else will persist
+# or will be entirely new.
 	${RM} ${SDIR}/index.html ${SDIR}/*/index.html
-# Make sure that on January 1st, the previous year's sig*.txt is retrieved
-# again.
+# Make sure that on January 1st, the previous year's sig*.txt is retrieved,
+# as it is only complete then.
 	${RM} ${SDIR}/sig`date --date=yesterday +%Y`.txt
 	${WGET} ${SURL}
 

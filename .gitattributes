@@ -2,3 +2,10 @@
 *.txt	filter=msdos
 *.htm	filter=msdos
 *.html	filter=msdos
+#
+# Filter "msdos" is defined in the config file as:
+#
+# [filter "msdos"]
+# 	clean = tr -d '\\015\\032'
+#
+# Files in the working copy will not be affected

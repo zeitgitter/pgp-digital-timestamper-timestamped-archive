@@ -22,8 +22,8 @@ Assuming the timestamp is only done on a strong [cryptographic
 hash](https://en.wikipedia.org/wiki/Cryptographic_hash_function) of the data,
 which is the norm in digital timestamping, the timestamp implies only the
 existence of the hash, which looks like a short, random string. The practical
-value of such a timestamp alone is close to zero. However, if *a document can be
-shown which has this exact hash*, the tuple of document and timestamp can be
+value of such a timestamp *alone* is close to zero. However, if *a document can
+be shown which has this exact hash*, the tuple of document and timestamp can be
 taken as evidence that also the document existed at that time.
 
 ## Abuse potential
@@ -55,6 +55,10 @@ But by far the biggest potential for abuse from a timestamping service is
 backstamping, i.e., providing a timestamp *now* which claims to have been
 issued sometime in the —possibly distant— past.
 
+As a result, a corrupt timestamper "assures" that a particular document existed
+earlier than it was created. This allows false claims of prior art or to mask
+unauthorized modifications.
+
 ## Gaining trust
 
 A timestamping service can gain its trust through multiple means, including
@@ -73,10 +77,82 @@ can be derived from the following sources:
 Publication happens in three ways:
 - Mailing it to a mailing list to which anyone can subscribe and thus become
   part of the distributed publication network.
-- Publishing it on his web site.
-- Publishing weekly digests to the `comp.security.pgp.announce`
-  [Newsgroup](https://en.wikipedia.org/wiki/Usenet_newsgroup).
+- Publishing it on its web site for anyone to retrieve.
+- Publishing weekly digests to the `comp.security.pgp`
+  [Newsgroup](https://en.wikipedia.org/wiki/Usenet_newsgroup) (previously
+  to `comp.security.pgp.announce`).
 
-However, the latter Newsgroup seems to have been eliminated at some unknown
-time. Therefore, this repository serves as a replacement publication venue and
-will also be timestamped by the `igitt` timestamping network.
+## Why archive the PGP Digital Timestamper files?
+
+* Usenet is losing traction and accessability,
+* the web site is under the same control as the timestamping service itself,
+* it is unclear who subscribes to the mailing list, and
+* how someone might get at the data collected by indentent users through the
+  mailing list.
+
+Therefore, there is a clear need for an independent, easily accessible source
+of the publication data.
+
+## Why timestamp the PGP Digital Timestamper files?
+
+The service has been in operation since 1995 and continues to use the
+technology from that time. This includes algorithms and key lengths considered
+state of the art at that time. However, a quarter of a century is a very long
+time for cryptography research and several discoveries have been made.
+
+For example, the keys used to verify the accuracy of the archive files (and
+thus to prevent adding/replacing signatures later) are only protected by
+1024 bit [RSA](https://en.wikipedia.org/wiki/RSA) keys, which is considered
+weak. (Even though the hash function, [MD5](https://en.wikipedia.org/wiki/MD5),
+is considered broken,
+[it seems that this is hard to exploit in this case.](./MD5.md))
+
+Therefore, an independent assurance that the files have not been tampered with
+seems appropriate. The easiest way is to use a separate timestamping system or
+network, in this case, `igitt`.
+
+# Archive format
+
+The data in this archive is taken from
+
+- [`www.itconsult.co.uk`](http://www.itconsult.co.uk/)
+  ([local](./www.itconsult.co.uk/index.htm); description of stamper operation,
+  retrieved 2019-03-08) and
+- [`stamper.itconsult.co.uk/stamper-files/`](http://stamper.itconsult.co.uk/stamper-files/stamper-files/)
+  ([local](./stamper.itconsult.co.uk/stamper-files/index.html); the actual
+  signatures published, updated daily),
+
+reflecting the actual contents of those two sites.
+
+## Content accuracy
+
+The content is archived *as-is*, with the following two normalizations applied:
+- Line ends have been normalized, so they will be checked out as your operating
+  system's native end-of-line sequence.
+- The trailing ^Z (0x2a, the legacy CP/M and MS-DOS end-of-file character) in
+  all the signature files has been trimmed.
+
+Neither of these modifications affect the accuracy or verifiability of the
+signatures.
+
+## Signature verification
+
+- To verify the signatures, you need an OpenPGP implementation with backward
+  compatibility to PGP 2.x, for example [GnuPG
+  1.x](https://www.gnupg.org/download/) with the `--pgp2` option. On a
+  Debian/Ubuntu system, this can be installed using `apt install gnupg1`.
+- Import the public keys with
+  `gpg1 --pgp2 --import ./www.itconsult.co.uk/stamper/stampinf.htm`.
+- Verify any annual file with `gpg1 --pgp2 --verify <file>.txt`
+
+## File structure
+
+All file names used below are relative to `stamper.itconsult.co.uk/stamper-files/`.
+
+- `sig<year>.txt`: Clearsigned list of tupes of the hightest sequence number
+  created by that time, with the time being the second part of the tuple
+  (`YYYY/MM/DD HH:MM` format).
+- `daily/<date>.txt` (with date in `YYYYMMDD` format): Signed ZIP archive of
+  all the signatures created on that day.
+- `weekly/wk<year>0<week number>.txt`: Clearsigned list of the seven daily
+  signatures over the daily files.

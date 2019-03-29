@@ -116,10 +116,10 @@ network, in this case, `igitt`.
 The data in this archive is taken from
 
 - [`www.itconsult.co.uk`](http://www.itconsult.co.uk/)
-  ([local](./www.itconsult.co.uk/index.htm); description of stamper operation,
+  ([local](./www.itconsult.co.uk/); description of stamper operation,
   retrieved 2019-03-08) and
 - [`stamper.itconsult.co.uk/stamper-files/`](http://stamper.itconsult.co.uk/stamper-files/stamper-files/)
-  ([local](./stamper.itconsult.co.uk/stamper-files/index.html); the actual
+  ([local](./stamper.itconsult.co.uk/stamper-files/); the actual
   signatures published, updated daily),
 
 reflecting the actual contents of those two sites.

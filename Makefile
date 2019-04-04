@@ -21,6 +21,6 @@ get-new-sigs:
 
 cron:	get-new-sigs
 	git add ${SDIR}/**
-	git commit -m "Added stamper signatures from `date --date=yesterday +%Y-%m-%d`"
+	git commit -m "Added `date --date=yesterday +%Y-%m-%d` stamper signatures"
 	git timestamp --branch gitta-timestamps --server https://gitta.enotar.ch
-	git push
+	git push --all

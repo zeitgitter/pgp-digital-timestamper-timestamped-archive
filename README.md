@@ -154,5 +154,5 @@ All file names used below are relative to `stamper.itconsult.co.uk/stamper-files
   (`YYYY/MM/DD HH:MM` format).
 - `daily/<date>.txt` (with date in `YYYYMMDD` format): Signed ZIP archive of
   all the signatures created on that day.
-- `weekly/wk<year>0<week number>.txt`: Clearsigned list of the seven daily
-  signatures over the daily files.
+- `weekly/wk<year><month><week-in-month>.txt`: Clearsigned list of the seven
+  daily signatures over the daily files.

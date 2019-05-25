@@ -21,6 +21,6 @@ get-new-sigs:
 
 cron:	get-new-sigs
 	git add ${SDIR}/**
-	git commit -m "Added `date --date=yesterday +%Y-%m-%d` stamper signatures"
+	git commit -S -m "Added `date --date=yesterday +%Y-%m-%d` stamper signatures"
 	git timestamp
 	git push --all

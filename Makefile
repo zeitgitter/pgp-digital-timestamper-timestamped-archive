@@ -20,7 +20,7 @@ get-new-sigs:
 	${WGET} ${SURL}
 
 cron:	get-new-sigs
-	git add ${SDIR}/**
+	git add ${SDIR}
 	git commit -S -m "Added `date --date=yesterday +%Y-%m-%d` stamper signatures"
 	git timestamp
 	git push --all

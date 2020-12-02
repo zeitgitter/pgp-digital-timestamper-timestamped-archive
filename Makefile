@@ -1,6 +1,6 @@
 # --reject-regex ';' prevents Apache directory-listings to be downloaded
 #   multiple times in different sort orders
-WGET	= wget --recursive --no-verbose --no-clobber --reject-regex ';'
+WGET	= wget --no-verbose --recursive --no-verbose --no-clobber --reject-regex ';'
 SDIR	= stamper.itconsult.co.uk/stamper-files
 SURL	= http://${SDIR}/
 
@@ -21,6 +21,6 @@ get-new-sigs:
 
 cron:	get-new-sigs
 	git add ${SDIR}
-	git commit -S -m "Added `date --date=yesterday +%Y-%m-%d` stamper signatures"
+	git commit -q -S -m "Added `date --date=yesterday +%Y-%m-%d` stamper signatures"
 	git timestamp
-	git push --all
+	git push -q --all

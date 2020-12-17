@@ -1,6 +1,6 @@
 # --reject-regex ';' prevents Apache directory-listings to be downloaded
 #   multiple times in different sort orders
-WGET	= wget --no-verbose --recursive --no-verbose --no-clobber --reject-regex ';'
+WGET	= wget --recursive --quiet --no-clobber --reject-regex ';'
 SDIR	= stamper.itconsult.co.uk/stamper-files
 SURL	= http://${SDIR}/
 

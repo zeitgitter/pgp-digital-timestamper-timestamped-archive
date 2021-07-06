@@ -10,15 +10,17 @@ all:
 get-all:
 	${WGET} http://www.itconsult.co.uk/index.htm ${SURL}
 
+# Update under the following assumptions:
+# - Indexes change daily
+# - `sig*.txt` is appended throughout the current year
+#   (i.e., on January 1st, fetch the previous year's file for the last time)
+# - Everything else will not change once it has been written
 get-new-sigs:
-# Assume that only the indexes need updating, everything else will persist
-# or will be entirely new.
 	${RM} ${SDIR}/index.html ${SDIR}/*/index.html
-# Make sure that on January 1st, the previous year's sig*.txt is retrieved,
-# as it is only complete then.
 	${RM} ${SDIR}/sig`date --date=yesterday +%Y`.txt
 	${WGET} ${SURL}
 
+# `git timestamp` is configured with `git config timestamp.{server,interval,…}`
 cron:	get-new-sigs
 	git add ${SDIR}
 	git commit -q -S -m "Added `date --date=yesterday +%Y-%m-%d` stamper signatures"

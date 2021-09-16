@@ -135,6 +135,17 @@ The content is archived *as-is*, with the following two normalizations applied:
 Neither of these modifications affect the accuracy or verifiability of the
 signatures.
 
+In the name of resource efficiency, especially on the stamper web server, only
+content which is expected to have changed is automatically downloaded.
+- New files in the directory with the yearly, weekly, and daily summaries are
+  picked up automatically, together with the changed index files.
+- The current yearly summary (and on January 1st, the previous year's summary)
+  are also checked for changes (a daily summary line will be added and the file
+  re-signed every day).
+
+Anything else will have to be done manually. Please let me know if the
+automated process has missed any change.
+
 ## Signature verification
 
 - To verify the signatures, you need an OpenPGP implementation with backward
@@ -155,4 +166,5 @@ All file names used below are relative to `stamper.itconsult.co.uk/stamper-files
 - `daily/<date>.txt` (with date in `YYYYMMDD` format): Signed ZIP archive of
   all the signatures created on that day.
 - `weekly/wk<year><month><week-in-month>.txt`: Clearsigned list of the seven
-  daily signatures over the daily files.
+  daily signatures over the daily files.  
+  ⚠️ Please note that `weekly/wk20210912.txt` is an exception to this rule.

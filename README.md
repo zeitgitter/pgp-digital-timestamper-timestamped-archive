@@ -166,5 +166,4 @@ All file names used below are relative to `stamper.itconsult.co.uk/stamper-files
 - `daily/<date>.txt` (with date in `YYYYMMDD` format): Signed ZIP archive of
   all the signatures created on that day.
 - `weekly/wk<year><month><week-in-month>.txt`: Clearsigned list of the seven
-  daily signatures over the daily files.  
-  ⚠️ Please note that `weekly/wk20210912.txt` is an exception to this rule.
+  daily signatures over the daily files.

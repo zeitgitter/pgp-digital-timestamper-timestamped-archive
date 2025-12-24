@@ -1,8 +1,13 @@
 # PGP Digital Timestamper timestamped archive
 
-The [PGP Digital Timestamper](http://www.itconsult.co.uk/stamper.htm) is an
+The [PGP Digital Timestamper](https://stamper.itconsult.co.uk/) is an
 important digital timestamping service provided since 1995 by Matthew
-Richardson and his [I.T. Consultancy Limited](http://www.itconsult.co.uk/).
+Richardson and his [I.T. Consultancy Limited](https://www.itconsult.co.uk/).
+
+NOTE 2025-12-24: The system has seen a [major update end of
+2025](https://stamper.itconsult.co.uk/changes2025.html), as a kind of 30th
+anniversary gift. Although this documentation has been updated, some parts
+still refer to the old version.
 
 It is still useful today, even though the interface is limited to asynchronous
 email communication, which makes it hard to use in many automated processes.
@@ -95,7 +100,7 @@ of the publication data.
 
 ## Why timestamp the PGP Digital Timestamper files?
 
-The service has been in operation since 1995 and continues to use the
+The service has been in operation since 1995 and -- until the 2025 upgrade -- used the
 technology from that time. This includes algorithms and key lengths considered
 state of the art at that time. However, a quarter of a century is a very long
 time for cryptography research and several discoveries have been made.
@@ -109,16 +114,19 @@ is considered broken,
 
 Therefore, an independent assurance that the files have not been tampered with
 seems appropriate. The easiest way is to use a separate timestamping system or
-network, in this case, `igitt`.
+network, in this case, `zeitgitter`.
 
 # Archive format
 
 The data in this archive is taken from
 
-- [`www.itconsult.co.uk`](http://www.itconsult.co.uk/)
-  ([local](./www.itconsult.co.uk/); description of stamper operation,
-  retrieved 2019-03-08) and
-- [`stamper.itconsult.co.uk/stamper-files/`](http://stamper.itconsult.co.uk/stamper-files/stamper-files/)
+- [`www.itconsult.co.uk`](https://www.itconsult.co.uk/)
+  ([local](./www.itconsult.co.uk/); introduction of the service and its
+  operator for 30 years, Matthew Richardson.
+- [`stamper.itconsult.co.uk`](https://stamper.itconsult.co.uk/)
+  ([local](./stamper.itconsult.co.uk/); description of stamper operation,
+  retrieved 2025-12-24) and
+- [`stamper.itconsult.co.uk/stamper-files/`](https://stamper.itconsult.co.uk/stamper-files/stamper-files/)
   ([local](./stamper.itconsult.co.uk/stamper-files/); the actual
   signatures published, updated daily),
 
@@ -148,13 +156,18 @@ automated process has missed any change.
 
 ## Signature verification
 
-- To verify the signatures, you need an OpenPGP implementation with backward
+- To verify the old (up to 2025) signatures,
+  you need an OpenPGP implementation with backward
   compatibility to PGP 2.x, for example [GnuPG
   1.x](https://www.gnupg.org/download/) with the `--pgp2` option. On a
   Debian/Ubuntu system, this can be installed using `apt install gnupg1`.
 - Import the public keys with
-  `gpg1 --pgp2 --import ./www.itconsult.co.uk/stamper/stampinf.htm`.
+  `gpg1 --pgp2 --import ./stamper.itconsult.co.uk/keys/stamper-keys-from-1995.asc`.
 - Verify any annual file with `gpg1 --pgp2 --verify <file>.txt`
+
+New (2025+) signatures can be verified using modern `pgp`, no special handling
+required ([all keys are documented
+here](https://stamper.itconsult.co.uk/keys.html))
 
 ## File structure
 

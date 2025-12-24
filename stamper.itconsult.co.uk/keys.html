@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stamper.css" type="text/css">
+    <title>Stamper Timestamping Service&ensp;&ndash;&ensp;Cryptographic Keys</title>
+
+<style>
+li {
+  padding-bottom: 8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Stamper Timestamping Service&ensp;&ndash;&ensp;Cryptographic Keys</h1>
+
+<h2>Current GnuPG Keys</h2>
+<p>
+The <a href=keys/stamper-keys-from-2025.asc>current GnuPG keys (since the 2025 upgrades)</a> comprise:-
+</p>
+<p>
+An <b><i>Offline Certifying Key</i></b> used only to sign Stamper's GnuPG keys as well as to sign Stamper's TSA keys:-
+<p>
+<pre class="style-code">
+pub   ed25519 2025-10-19 [SC]
+      0B77D1C41FEBFF24694124DDB0D611D3CDA623C1
+uid           [ultimate] stamper.itconsult.co.uk - Certification Key (offline)
+sig 3        B0D611D3CDA623C1 2025-10-19  [self-signature]
+sig          2A34FA1BDA26CF63 2025-10-19  Matthew Richardson (Jersey, Channel Islands)
+</pre>
+
+<p>
+A <b><i>Timestamping Key</i></b> used only to timestamp items submitted to Stamper.  Each such signature will be
+assigned a unique "Stamper Id":-
+<p>
+<pre class="style-code">
+pub   ed25519 2025-10-19 [C]
+      211005B6F5A3A273C730A0595BBCC37360323DF3
+uid           [  full  ] stamper.itconsult.co.uk - Timestamping Key
+sig 3        5BBCC37360323DF3 2025-10-19  [self-signature]
+sig          B0D611D3CDA623C1 2025-10-19  stamper.itconsult.co.uk - Certification Key (offline)
+sub   ed25519 2025-10-19 [S]
+sig          5BBCC37360323DF3 2025-10-19  [self-signature]
+</pre>
+
+<p>
+A <b><i>Management Key</i></b> used to sign Git commits as well as the lists of the highest
+signature number for each date:-
+<p>
+<pre class="style-code">
+pub   ed25519 2025-10-19 [C]
+      28B35C5AF5156FF1438BAFDF7F769DB9D3A4240A
+uid           [  full  ] stamper.itconsult.co.uk - Management Key
+sig 3        7F769DB9D3A4240A 2025-10-19  [self-signature]
+sig          B0D611D3CDA623C1 2025-10-19  stamper.itconsult.co.uk - Certification Key (offline)
+sub   ed25519 2025-10-19 [S]
+sig          7F769DB9D3A4240A 2025-10-19  [self-signature]
+</pre>
+
+<h2>Current RFC3163 Timestamp Authority Keys</h2>
+<p>
+There are two keys:-
+</p>
+<ul>
+<li>A <a href="keys/stamper-ca.pem">certificate authority key</a> (<a href="keys/stamper-ca.pem.asc">pgp signature</a>).
+</li>
+<li>A <a href="keys/stamper-tsa.pem">timestamping key</a>, issued by the CA (<a href="keys/stamper-tsa.pem.asc">pgp signature</a>).
+</li>
+</ul>
+
+<h2>Original PGP Keys (prior to 2025 upgrade)</h2>
+<p>
+<b><i>Note:</i></b> These keys are not compatible with the latest versions of GnuPG, but can be used
+with version 1.4.  The <i>--pgp2</i> option is required to import them.
+</p>
+<p>
+The <a href=keys/stamper-keys-from-1995.asc>original GnuPG keys (prior to the 2025 upgrades)</a> comprise:-
+</p>
+<p>
+A <b><i>Timestamping Key</i></b> used only to timestamp items submitted to Stamper.  Each such signature will be
+assigned a unique "Stamper Id":-
+<p>
+<pre class="style-code">
+pub   2046R/70B61F81 1995-10-11
+      Key fingerprint = 4B 12 BC D5 78 85 11 06  3B 54 31 90 E0 9D F3 06
+uid                  Timestamp Service <stamper@itconsult.co.uk>
+sig          70B61F81 2014-05-25  Timestamp Service <stamper@itconsult.co.uk>
+sig          0712FEBD 1995-10-12  Matthew Richardson <matthew@itconsult.co.uk>
+</pre>
+A <b><i>Management Key</i></b> used to sign the lists of the highest
+signature number for each date:-
+<p>
+<pre class="style-code">
+pub   1024R/083A08A9 1995-08-27
+      Key fingerprint = 90 89 12 3A 4F D6 69 9B  DF B2 7C B2 49 61 02 E5
+uid                  Scheduler Service (MER_Schedule on \\MER_DECXL)
+sig          083A08A9 1995-08-27  Scheduler Service (MER_Schedule on \\MER_DECXL)
+sig          0712FEBD 1995-08-27  Matthew Richardson <matthew@itconsult.co.uk>
+</pre>
+<p>
+These are both signed using my older key <i>0712FEBD</i>.
+</p>
+<p>
+These keys also include my newer key
+<i>2A34FA1BDA26CF63</i>, and it can be seen using GnuPG 1.4, that my newer key has been signed
+by my older key:-
+</p>
+<pre class="style-code">
+pub   4096R/DA26CF63 2021-06-20
+      Key fingerprint = 1C90 F3BE 100F B9AD F837  9DAE 2A34 FA1B DA26 CF63
+uid                  Matthew Richardson (Jersey, Channel Islands)
+sig 3        DA26CF63 2021-06-20  Matthew Richardson (Jersey, Channel Islands)
+sig 3        <font color="green"><i>0712FEBD</i></font> 2021-06-20  Matthew Richardson <matthew@itconsult.co.uk>
+uid                  Matthew Richardson <matthew@itconsult.co.uk>
+sig 3        DA26CF63 2021-06-20  Matthew Richardson (Jersey, Channel Islands)
+sig 3        <font color="green"><i>0712FEBD</i></font> 2021-06-20  Matthew Richardson <matthew@itconsult.co.uk>
+sub      0C/572550CB 2021-06-20
+sig          DA26CF63 2021-06-20  Matthew Richardson (Jersey, Channel Islands)
+sub      0e/9E074D19 2021-06-20
+sig          DA26CF63 2021-06-20  Matthew Richardson (Jersey, Channel Islands)
+sub      0C/92414590 2023-12-22
+sig          DA26CF63 2023-12-22  Matthew Richardson (Jersey, Channel Islands)
+
+pub   1024R/<font color="green"><i>0712FEBD</i></font> 1994-09-25
+      Key fingerprint = BC DB 9E 23 7B 76 4E 8E  F4 05 BC 6F 8A D7 1B 0D
+uid                  Matthew Richardson <matthew@itconsult.co.uk>
+sig          0712FEBD 1995-10-12  Matthew Richardson <matthew@itconsult.co.uk>
+uid                  Matthew Richardson <Jersey, Channel Islands>
+sig          0712FEBD 1994-09-25  Matthew Richardson <matthew@itconsult.co.uk>
+</pre>
+<p>
+As a historical aside, both my key <i>0712FEBD</i> and Stamper's key <i>70B61F81</i>
+are listed in
+<a href=https://www.cl.cam.ac.uk/research/security/OLD/Trust-Register/gtr1998.pdf>The Global Trust Register 1988</a>.
+</p>
+
+<footer>
+<br>
+<hr size=2 width=100%>
+<address>
+<a href="/">Stamper Timestamping Service</a> provided by:-<br>
+<a href="https://www.itconsult.co.uk/">I. T. Consultancy Limited</a>, Jersey, Channel Islands<br>
+Last updated: 21 December 2025
+</address>
+</footer>
+
+</body>
+</html>
+

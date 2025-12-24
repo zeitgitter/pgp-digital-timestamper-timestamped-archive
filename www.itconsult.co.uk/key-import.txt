@@ -1,0 +1,60 @@
+firstly with GnuPG version 1.4
+==============================
+
+$ gpg1 --pgp2 --import itconsult-keys.asc
+gpg: WARNING: digest algorithm MD5 is deprecated
+gpg: please see https://gnupg.org/faq/weak-digest-algos.html for more information
+gpg: key 0712FEBD: public key "Matthew Richardson <matthew@itconsult.co.uk>" imported
+gpg: key DA26CF63: public key "Matthew Richardson (Jersey, Channel Islands)" imported
+gpg: Total number processed: 2
+gpg:               imported: 2  (RSA: 2)
+gpg: no ultimately trusted keys found
+
+$ gpg1 --list-sigs --with-fingerprint
+pub   1024R/0712FEBD 1994-09-25
+      Key fingerprint = BC DB 9E 23 7B 76 4E 8E  F4 05 BC 6F 8A D7 1B 0D
+uid                  Matthew Richardson <matthew@itconsult.co.uk>
+sig          0712FEBD 1995-10-12  Matthew Richardson <matthew@itconsult.co.uk>
+uid                  Matthew Richardson <Jersey, Channel Islands>
+sig          0712FEBD 1994-09-25  Matthew Richardson <matthew@itconsult.co.uk>
+
+pub   4096R/DA26CF63 2021-06-20
+      Key fingerprint = 1C90 F3BE 100F B9AD F837  9DAE 2A34 FA1B DA26 CF63
+uid                  Matthew Richardson (Jersey, Channel Islands)
+sig 3        DA26CF63 2021-06-20  Matthew Richardson (Jersey, Channel Islands)
+sig 3        0712FEBD 2021-06-20  Matthew Richardson <matthew@itconsult.co.uk>
+uid                  Matthew Richardson <matthew@itconsult.co.uk>
+sig 3        DA26CF63 2021-06-20  Matthew Richardson (Jersey, Channel Islands)
+sig 3        0712FEBD 2021-06-20  Matthew Richardson <matthew@itconsult.co.uk>
+sub      0C/572550CB 2021-06-20
+sig          DA26CF63 2021-06-20  Matthew Richardson (Jersey, Channel Islands)
+sub      0e/9E074D19 2021-06-20
+sig          DA26CF63 2021-06-20  Matthew Richardson (Jersey, Channel Islands)
+sub      0C/92414590 2023-12-22
+sig          DA26CF63 2023-12-22  Matthew Richardson (Jersey, Channel Islands)
+
+and now with a recent GnuPG version 2
+=====================================
+
+$ gpg --import itconsult-keys.asc
+gpg: key 2A34FA1BDA26CF63: 2 signatures not checked due to missing keys
+gpg: key 2A34FA1BDA26CF63: public key "Matthew Richardson (Jersey, Channel Islands)" imported
+gpg: Total number processed: 2
+gpg:     skipped PGP-2 keys: 1
+gpg:               imported: 1
+gpg: no ultimately trusted keys found
+
+$ gpg --list-sigs --with-fingerprint
+pub   rsa4096 2021-06-20 [C]
+      1C90 F3BE 100F B9AD F837  9DAE 2A34 FA1B DA26 CF63
+uid           [ unknown] Matthew Richardson (Jersey, Channel Islands)
+sig 3        2A34FA1BDA26CF63 2021-06-20  [self-signature]
+uid           [ unknown] Matthew Richardson <matthew@itconsult.co.uk>
+sig 3        2A34FA1BDA26CF63 2021-06-20  [self-signature]
+sub   ed25519 2021-06-20 [S]
+sig          2A34FA1BDA26CF63 2021-06-20  [self-signature]
+sub   cv25519 2021-06-20 [E]
+sig          2A34FA1BDA26CF63 2021-06-20  [self-signature]
+sub   ed25519 2023-12-22 [A]
+sig          2A34FA1BDA26CF63 2023-12-22  [self-signature]
+

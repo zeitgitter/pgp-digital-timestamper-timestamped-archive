@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stamper.css" type="text/css">
+    <title>Stamper Timestamping Service&ensp;&ndash;&ensp;rfc3161 TSA via HTTPS</title>
+
+<style>
+li {
+  padding-bottom: 8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Stamper Timestamping Service&ensp;&ndash;&ensp;rfc3161 TSA via HTTPS</h1>
+
+<p>
+Stamper provides an <a href="https://www.rfc-editor.org/rfc/rfc3161">rfc3161</a> Timestamping Authority
+accessible over HTTPS at:-
+</p>
+<p>
+&emsp;<a href="https://timestamp.stamper.itconsult.co.uk/stamp-tsa">https://timestamp.stamper.itconsult.co.uk/stamp-tsa</a>
+</p>
+<p>
+which supports the hashes: sha256, sha384 &amp; sha512
+</p>
+
+<p>
+The first step is to create a timestamp query (TSQ), which generates a hash of the document
+(for example <a href="examplefiles/examplefile.txt">"examplefile.txt"</a>) to be timestamped:-
+</p>
+<pre class="style-code">
+$ openssl ts -query -data examplefile.txt -no_nonce -sha512 -out examplefile.tsq
+Using configuration from /usr/lib/ssl/openssl.cnf
+</pre>
+<p>
+The generated TSQ is then submitted to Stamper, which provides a timestamp response (TSR):-
+</p>
+<pre class="style-code">
+$ curl -H "Content-Type: application/timestamp-query" --data-binary '@examplefile.tsq' -o examplefile.tsr https://timestamp.stamper.itconsult.co.uk/stamp-tsa
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1265    0  1177  100    88   1027     76  0:00:01  0:00:01 --:--:--  1104
+</pre>
+<p>
+The contents of the TSR can be shown by:-
+</p>
+<pre class="style-code">
+$ openssl ts -reply -in examplefile.tsr -text
+Using configuration from /usr/lib/ssl/openssl.cnf
+Status info:
+Status: Granted.
+Status description: unspecified
+Failure info: unspecified
+
+TST info:
+Version: 1
+Policy OID: tsa_policy1
+Hash Algorithm: sha512
+Message data:
+    0000 - a0 29 a9 9b 34 41 55 65-dc 67 15 2a c3 7b 1e a0   .)..4AUe.g.*.{..
+    0010 - 03 1c 65 68 aa e9 fd d2-46 b6 03 d1 e5 c3 fe ea   ..eh....F.......
+    0020 - f3 b3 6c b2 e1 bc b8 78-66 b7 81 1f 64 8d b8 b8   ..l....xf...d...
+    0030 - ca 68 22 3d 68 ee 5b 75-7a 01 3e 73 d9 c7 cf 5f   .h"=h.[uz.>s..._
+Serial number: 0x20436B
+Time stamp: Dec 20 17:57:32 2025 GMT
+Accuracy: 0x05 seconds, unspecified millis, unspecified micros
+Ordering: yes
+Nonce: unspecified
+TSA: DirName:/C=JE/O=I T Consultancy Limited/CN=Stamper Timestamping Key 1
+Extensions:
+</pre>
+<p>
+Inconveniently, rfc3161 uses hexadecimal numbers whereas Stamper uses decimal.  Thus, the serial number 0x20436B
+equates to Stamper-Id 2114411.  What Stamper also does, is to timestamp the TSR with PGP and it is
+the PGP timestamps which are chained together.
+</p>
+<p>
+The corresponding PGP timestamp can be retrieved and examined:-
+</p>
+<pre class="style-code">
+$ curl -o examplefile02.asc https://timestamp.stamper.itconsult.co.uk/get-sig-pgp?stamperid=2114411
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   257    0   257    0     0   5047      0 --:--:-- --:--:-- --:--:--  5140
+
+$ cat examplefile02.asc
+-----BEGIN PGP SIGNATURE-----
+Comment: Stamper id: 2114411
+
+iHUEABYKAB0WIQT/IHN7o3gaHZ+7jLHo6IPRD28swgUCaUbjjAAKCRDo6IPRD28s
+wuVlAQCSex1Ln8zOX+YO1XU/7KBYdgiGn9JzK7huALTRCv++uQEA1I5fTEYSsOAu
+l3Jvm2Q4slC2+97WqeoKCCSrYDv+PwY=
+=NRja
+-----END PGP SIGNATURE-----
+</pre>
+<p>
+The authenticity or the TSR can then be validated:-
+</p>
+<pre class="style-code">
+$ gpg --verify examplefile02.asc examplefile.tsr
+gpg: Signature made Sat 20 Dec 2025 17:57:32 UTC
+gpg:                using EDDSA key FF20737BA3781A1D9FBB8CB1E8E883D10F6F2CC2
+gpg: Good signature from "stamper.itconsult.co.uk - Timestamping Key" [full]
+</pre>
+
+<p>
+Finally, the TSR can be validated against the original data:-
+</p>
+<pre class="style-code">
+$ openssl ts -verify -data examplefile.txt -in examplefile.tsr -CAfile stamper-ca.pem -untrusted stamper-tsa.pem
+Using configuration from /usr/lib/ssl/openssl.cnf
+Warning: certificate from 'stamper-tsa.pem' with subject '/C=JE/O=I T Consultancy Limited/CN=Stamper Timestamping Key 1' is not a CA cert
+Verification: OK
+</pre>
+
+
+<footer>
+<br>
+<hr size=2 width=100%>
+<address>
+<a href="/">Stamper Timestamping Service</a> provided by:-<br>
+<a href="https://www.itconsult.co.uk/">I. T. Consultancy Limited</a>, Jersey, Channel Islands<br>
+Last updated: 20 December 2025
+</address>
+</footer>
+
+</body>
+</html>
+

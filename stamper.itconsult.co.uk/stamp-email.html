@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stamper.css" type="text/css">
+    <title>Stamper Timestamping Service&ensp;&ndash;&ensp;PGP by Email</title>
+
+<style>
+li {
+  padding-bottom: 8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Stamper Timestamping Service&ensp;&ndash;&ensp;PGP by Email</h1>
+
+<p>
+Stamper will timestamp a whole received email message sent to <a href="mailto:stamp-eml@stamper.itconsult.co.uk"">stamp-eml@stamper.itconsult.co.uk</a>,
+which will return a message to the sender containing both a detached PGP signature, and the original message as an EML attachment. 
+</p>
+
+<p>
+Once the attachments have been saved, this can be validated:-
+<pre class="style-code">
+$ gpg --verify 2114744.asc 2114744.eml
+gpg: Signature made Sun 21 Dec 2025 14:32:35 UTC
+gpg:                using EDDSA key FF20737BA3781A1D9FBB8CB1E8E883D10F6F2CC2
+gpg: Good signature from "stamper.itconsult.co.uk - Timestamping Key" [full]
+</pre>
+
+
+</p>
+
+<footer>
+<br>
+<hr size=2 width=100%>
+<address>
+<a href="/">Stamper Timestamping Service</a> provided by:-<br>
+<a href="https://www.itconsult.co.uk/">I. T. Consultancy Limited</a>, Jersey, Channel Islands<br>
+Last updated: 21 December 2025
+</address>
+</footer>
+
+</body>
+</html>
+

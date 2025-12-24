@@ -1,14 +1,14 @@
 # --reject-regex ';' prevents Apache directory-listings to be downloaded
 #   multiple times in different sort orders
-WGET	= wget --recursive --quiet --no-clobber --reject-regex ';'
+WGET	= wget --recursive --quiet --no-clobber --reject-regex ';' --https-only
 SDIR	= stamper.itconsult.co.uk/stamper-files
-SURL	= http://${SDIR}/
+SURL	= https://${SDIR}/
 
 all:
 	@echo "Please use 'make get-all' or 'make get-new-sigs'"
 
 get-all:
-	${WGET} http://www.itconsult.co.uk/index.htm ${SURL}
+	${WGET} https://www.itconsult.co.uk/ ${SURL}
 
 # Update under the following assumptions:
 # - Indexes change daily

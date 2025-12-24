@@ -1,0 +1,10 @@
+        .style-code {
+          border-style: solid;
+          border-width: thin;
+          border-color: blue;
+          padding-left: 15px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-radius: 10px;
+          background-color: lightgray;
+        }

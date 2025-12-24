@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stamper.css" type="text/css">
+    <title>Stamper Timestamping Service&ensp;&ndash;&ensp;Changes due to 2025 upgrades</title>
+
+<style>
+li {
+  padding-bottom: 8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Stamper Timestamping Service&ensp;&ndash;&ensp;Changes due to 2025 upgrades</h1>
+
+<p>
+Since Stamper was first setup in 1995, it has not had any significant software upgrades.  It used
+PGP 2.6.2, which has for some time been rather out of date.  It also operated by email
+only (originally having been on polled dialup), and nowadays HTTPS would be more
+ususal for a service of this sort.  The intention of these upgrades is to put it onto
+a modern operating system, with a modern version of GnuPG, both of which can be maintained
+and updated on an ongoing basis.
+</p>
+
+<p>
+There are no radical design changes.  The service continues with the daily and weekly
+feeding back of signatures, and the publication of all signatures made.  Specifically,
+it is a <i>continuation</i> of the existing service, and at the point of upgrade, the
+signing feedback chain and Stamper Id numbering will be maintained.
+</p>
+<p>
+The specific changes comprise:-
+</p>
+<ul>
+<li>Signatures made with a modern version of GnuPG, and using modern keys.  This requires
+the generation of new keys suitable for use with GnuPG 2.
+</li>
+<li>Addition of an HTTPS interface for timestamping.
+</li>
+<li>Addition of an RFC3161 timestamping authority via HTTPS, where the returned stamps are
+in turn timestamped by Stamper using GnuPG.  The serial number of the RFC3161 timestamp
+matches the Stamper-ID of the GnuPG signature.
+</li>
+<li>Addition of an HTTPS interface to retrieve details of a specfic Stamper-ID.
+</li>
+<li>A Git repository containing all signatures and associated files, which is
+updated daily and with the commits being signed with Stamper's management key.
+</li>
+<li>For email timestamping, there will only be a single "mode" which will take the
+whole inbound message (including headers), sign it, and return it as an EML attachment together with
+the Stamper signature.
+</li>
+<li>Discontinuation of email "proof of posting" certificates, which are not really
+workable with modern email systems featuring SPF, DKIM and DMARC.
+</li>
+<li>Discontinuation of the email "list server" methods of accessing Stamper
+instructions and data.
+</li>
+<li>Discontinuation of the posting of weekly summaries to Usenet.
+</li>
+<li>A slight change to the email behaviour in certain uncommon situations, namely only if the email sender
+SMTP "envelope" address and the "From:" header address are different.  Prior to the upgrade, the email was returned
+to the "From:" address, but following the upgrade, the "envelope" address will be used.
+</li>
+<li>Web access to stamper.itconsult.co.uk (for signatures and the like) will change from
+being HTTP only to HTTPS only.  It will no longer listed on HTTP.
+</li>
+</ul>
+
+
+<footer>
+<br>
+<hr size=2 width=100%>
+<address>
+<a href="/">Stamper Timestamping Service</a> provided by:-<br>
+<a href="https://www.itconsult.co.uk/">I. T. Consultancy Limited</a>, Jersey, Channel Islands<br>
+Last updated: 18 December 2025
+</address>
+</footer>
+
+</body>
+</html>
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stamper.css" type="text/css">
+    <title>Stamper Timestamping Service&ensp;&ndash;&ensp;PGP via HTTPS</title>
+
+<style>
+li {
+  padding-bottom: 8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Stamper Timestamping Service&ensp;&ndash;&ensp;PGP via HTTPS</h1>
+
+<p>
+Stamper will timestamp a content sent via HTTPS as follows.  The content must be submitted using the POST
+method to <a href="https://timestamp.stampertest.itconsult.co.uk/stamp-pgp">https://timestamp.stampertest.itconsult.co.uk/stamp-pgp</a>,
+for example to timestamp a local file <a href="examplefiles/examplefile.txt">"examplefile.txt"</a>:-
+<pre class="style-code">
+$ curl -H "Content-Type: text/plain" --data-binary '@examplefile.txt' https://timestamp.stamper.itconsult.co.uk/stamp-pgp
+-----BEGIN PGP SIGNATURE-----
+Comment: Stamper id: 2114407
+
+iHUEABYKAB0WIQT/IHN7o3gaHZ+7jLHo6IPRD28swgUCaUbfyQAKCRDo6IPRD28s
+wuYjAQC/rhEnzWNh63Y4IdCL/kQEcvcwCaiEyFQnm1YvndCPQAEAke8rgeaWPCwF
+B8ku9GFCeZFoySa1tfhAL6NZMtzr4Ac=
+=cksR
+-----END PGP SIGNATURE-----
+</pre>
+which then returns the timestamp.
+</p>
+Alternatively, the timestamp output can be written directly to a file:-
+<pre class="style-code">
+$ curl -H "Content-Type: text/plain" --data-binary '@examplefile.txt' -o examplefile01.asc https://timestamp.stamper.itconsult.co.uk/stamp-pgp
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   326    0   258  100    68    230     60  0:00:01  0:00:01 --:--:--   291
+$ cat examplefile01.asc
+-----BEGIN PGP SIGNATURE-----
+Comment: Stamper id: 2114408
+
+iHUEABYKAB0WIQT/IHN7o3gaHZ+7jLHo6IPRD28swgUCaUbgDgAKCRDo6IPRD28s
+wnUpAP9Ljfav/Sjkk/2XChNgE0jFUlZJdk+4AM6zuwRue+q3pQEAzP4c454JNAah
+4nbgN9jqbbTS8JGbCLJS6OKR6YsCfQw=
+=nvyq
+-----END PGP SIGNATURE-----
+</pre>
+
+<p>
+This can be validated:-
+<pre class="style-code">
+$ gpg --verify examplefile01.asc examplefile.txt
+gpg: Signature made Sat 20 Dec 2025 17:42:38 UTC
+gpg:                using EDDSA key FF20737BA3781A1D9FBB8CB1E8E883D10F6F2CC2
+gpg: Good signature from "stamper.itconsult.co.uk - Timestamping Key" [full]
+</pre>
+</p>
+
+<footer>
+<br>
+<hr size=2 width=100%>
+<address>
+<a href="/">Stamper Timestamping Service</a> provided by:-<br>
+<a href="https://www.itconsult.co.uk/">I. T. Consultancy Limited</a>, Jersey, Channel Islands<br>
+Last updated: 20 December 2025
+</address>
+</footer>
+
+</body>
+</html>
+

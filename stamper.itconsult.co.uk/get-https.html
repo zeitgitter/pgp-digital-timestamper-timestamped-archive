@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stamper.css" type="text/css">
+    <title>Stamper Timestamping Service&ensp;&ndash;&ensp;Get Signatures via HTTPS</title>
+
+<style>
+li {
+  padding-bottom: 8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Stamper Timestamping Service&ensp;&ndash;&ensp;Get Signatures via HTTPS</h1>
+
+<p>
+Signatures may be retrived using HTTPS, the signatures being available immediately after having been generated,
+and permanently thereafter.  This is achieved by specifying the stamper id of the signature.  The details
+below include real signatures.  Change the parameter to the HTTPS get for the signature number wanted.  In
+all cases, a 404 error will be returned if the stamper id does not exist.
+</p>
+<p>
+<a href=https://timestamp.stamper.itconsult.co.uk/get-sig-info?stamperid=2114411">https://timestamp.stamper.itconsult.co.uk/get-sig-info?stamperid=2114411</a> will return
+details of the available signature types for the specified stamper id.  They are returned as hyperlinks, so that they would work in a browser.  For example:-
+</p>
+<pre class="style-code">
+$ curl https://timestamp.stamper.itconsult.co.uk/get-sig-info?stamperid=2114411
+&lt;A HREF="https://timestamp.stamper.itconsult.co.uk/get-sig-pgp?stamperid=2114411"&gt;pgp signature 2114411.asc&lt;/A&gt;&lt;BR&gt;
+&lt;A HREF="https://timestamp.stamper.itconsult.co.uk/get-sig-tsa?stamperid=2114411"&gt;tsa signature 2114411.tsr&lt;/A&gt;&lt;BR&gt;
+</pre>
+<p><br></p>
+<p>
+<a href=https://timestamp.stampertest.itconsult.co.uk/get-sig-pgp?stamperid=2114411">https://timestamp.stampertest.itconsult.co.uk/get-sig-pgp?stamperid=2114411</a> will return
+the ascii armored signature for the specified stamper id.  For example:-
+</p>
+<pre class="style-code">
+$ curl https://timestamp.stamper.itconsult.co.uk/get-sig-pgp?stamperid=2114411
+-----BEGIN PGP SIGNATURE-----
+Comment: Stamper id: 2114411
+
+iHUEABYKAB0WIQT/IHN7o3gaHZ+7jLHo6IPRD28swgUCaUbjjAAKCRDo6IPRD28s
+wuVlAQCSex1Ln8zOX+YO1XU/7KBYdgiGn9JzK7huALTRCv++uQEA1I5fTEYSsOAu
+l3Jvm2Q4slC2+97WqeoKCCSrYDv+PwY=
+=NRja
+-----END PGP SIGNATURE-----
+</pre>
+<p><br></p>
+<p>
+<a href=https://timestamp.stampertest.itconsult.co.uk/get-sig-tsa?stamperid=2114411">https://timestamp.stampertest.itconsult.co.uk/get-sig-tsa?stamperid=2114411</a> will return
+the rfc3161 TSR repsponse for the specified stamper id, which is binary and is best saved to a file.  For example:-
+</p>
+<pre class="style-code">
+examples@m13:/opt/examples$ curl -o examplefile01.tsr https://timestamp.stamper.itconsult.co.uk/get-sig-tsa?stamperid=2114411
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1177    0  1177    0     0  18966      0 --:--:-- --:--:-- --:--:-- 18983
+</pre>
+
+<footer>
+<br>
+<hr size=2 width=100%>
+<address>
+<a href="/">Stamper Timestamping Service</a> provided by:-<br>
+<a href="https://www.itconsult.co.uk/">I. T. Consultancy Limited</a>, Jersey, Channel Islands<br>
+Last updated: 20 December 2025
+</address>
+</footer>
+
+</body>
+</html>
+

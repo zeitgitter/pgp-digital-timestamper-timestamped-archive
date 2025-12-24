@@ -1,11 +1,101 @@
-<HTML><HEAD>
-<TITLE>Stamper:  What's New
-</TITLE>
-</HEAD>
-<BODY>
-<H1>Stamper:  What's New</H1>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/stamper.css" type="text/css">
+    <title>Stamper Timestamping Service&ensp;&ndash;&ensp;What's New'</title>
+
+<style>
+li {
+  padding-bottom: 8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Stamper Timestamping Service&ensp;&ndash;&ensp;What's New</h1>
 
 <P Align="Center"><HR Size=2 Width=100%></P>
+<H3>19-Dec-25: Upgrade - Migration/Implementation</H3>
+<p>The migration and implementation will be commencing around 13:00 UTC.  During
+these works, all timestamp requests will be queued and will subsequently be processed by the
+upgraded systems.  It is intended that ping@stamper.itconsult.co.uk will not be
+affected.  Further progress will be shown here.
+</p>
+<p>14:25: The migration is partially complete with all mail being processed by the upgraded
+systems.  Work on migration of old signatures, documentation and the like remains ongoing.
+</p>
+<p>18:30: The migration is complete.  The examples in the documentation will be updated in
+the next couple of days. The new documentation is at 
+<a href="https://stamper.itconsult.co.uk">stamper.itconsult.co.uk</a>
+</p>
+<p>19:10 Saturday: The documentation is largely updated and everything appears to be
+working correctly...
+</p>
+
+<P Align="Center"><HR Size=2 Width=100%></P>
+
+<H3>18-Dec-25: Forthcoming Upgrade - Implementation</H3>
+<p>
+The upgrade will be going live over the next few days, hopefully Friday 19th, or
+perhaps Saturday or Sunday.
+</p
+<p>
+The progress will be posted on this page in real time.
+</p>
+<P Align="Center"><HR Size=2 Width=100%></P>
+
+<H3>19-Nov-25: Forthcoming Upgrade - Available for Testing</H3>
+<p>
+The systems for the forthcoming upgrade are now available for testing,
+albeit using test keys.  The documentation is thought to be complete.
+</p>
+<p>
+Information is available from: <a href="https://stampertest.itconsult.co.uk/testing.html">https://stampertest.itconsult.co.uk/testing.html</a>
+</p>
+<P Align="Center"><HR Size=2 Width=100%></P>
+
+<H3>03-Oct-25: Forthcoming Significant Upgrade</H3>
+<p>Stamper has been going for a while (coming up 30 years!) and has been showing
+its age for some time.  It will shortly being upgraded, for which more information
+will follow in due course.
+</P>
+<p>
+The highlights of the forthcoming upgrade comprise:-
+</P>
+<ul>
+<li>Signatures made with a modern version of GnuPG, and using modern keys.
+</li>
+<li>Addition of an HTTPS interface for timestamping.
+</li>
+<li>Addition of an RFC3161 timestamping authority via HTTPS, where the returned stamps are
+in turn timestamped by Stamper using GnuPG.  The serial number of the RFC3161 timestamp
+matches the Stamper-ID of the GnuPG signature.
+</li>
+<li>Addition of an HTTPS interface to retrieve details of a specfic Stamper-ID.
+</li>
+<li>A new GIT repository containing all signatures and associated files.
+</li>
+<li>Discontinuation of email "proof of posting" certificates, which are not really
+workable with modern email systems featuring SPF, DKIM and DMARC.
+</li>
+<li>Discontinuation of the email "list server" methods of accessing Stamper
+instructions and data.
+</li>
+<li>For email timestamping, there will only be a single "mode" which will take the
+whole inbound message (including headers), sign it, and return it as an EML attachment together with
+the Stamper signature.
+</li>
+<li>Discontinuation of the posting of weekly summaries to Usenet.
+</li>
+</ul>
+<P Align="Center"><HR Size=2 Width=100%></P>
+
+<h3><font color="red"><i>All entries below are historical only - they do <b>NOT</b> relate to the current system (since 2025)</i></font></h3>
+
 <H3>25-May-14: Self-Signed Keys</H3>
 <P>A number of enquiries have been made regarding the fact that Stamper's PGP
 keys have not been self-signed.  The reason (back in 1995) was to ensure that
@@ -105,8 +195,18 @@ made its first timestamp!</P>
 <P>In either case, simply resubmitting the message should get it properly stamped.</P>
 <P>This only seems to be happening to a very small number of messages andI shall try to track the problem down as soon as possible.  I will post a further announcement when I have found &amp; fixed it.</P>
 <P Align="Center"><HR Size=2 Width=100%></P>
-<P>Matthew Richardson<br>
-<A HREF="/index.htm">I. T. Consultancy Limited</A>, Jersey, Channel Islands<br>
-Last updated: 25 May 2014
-</P>
-</BODY></HTML>
+
+
+<footer>
+<br>
+<hr size=2 width=100%>
+<address>
+<a href="/">Stamper Timestamping Service</a> provided by:-<br>
+<a href="https://www.itconsult.co.uk/">I. T. Consultancy Limited</a>, Jersey, Channel Islands<br>
+Last updated: 21 November 2025
+</address>
+</footer>
+
+</body>
+</html>
+

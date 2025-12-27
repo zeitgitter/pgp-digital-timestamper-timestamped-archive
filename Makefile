@@ -18,7 +18,7 @@ get-all:
 get-new-sigs:
 	${RM} ${SDIR}/index.html ${SDIR}/*/index.html
 	${RM} ${SDIR}/sig`date --date=yesterday +%Y`.txt
-	${WGET} ${SURL}
+	${WGET} ${SURL} || exit 0
 
 # `git timestamp` is configured with `git config timestamp.{server,interval,…}`
 cron:	get-new-sigs

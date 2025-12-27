@@ -72,7 +72,7 @@ A timestamping service can gain its trust through multiple means, including
 - trust from transparency and public reviewability, and
 - trust through an independent binding (e.g., cross-timestamping).
 
-The [PGP Timestamper's trust](http://www.itconsult.co.uk/stamper/stampinf.htm)
+The [PGP Timestamper's trust](http://stamper.itconsult.co.uk/stamper/)
 can be derived from the following sources:
 - The operator: [Matthew Richardson claims](http://www.itconsult.co.uk) to be
   independent because he is not dependent on any vendors. (This only partly
